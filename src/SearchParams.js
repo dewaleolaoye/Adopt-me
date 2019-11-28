@@ -4,9 +4,8 @@ import UseDropDown from './UseDropdown';
 import Results from './Results';
 
 const SearchParams = () => {
-  const [location, setlocation] = useState('Seatle, WA');
+  const [location, setlocation] = useState('Seattle, WA');
   const [breeds, setBreeds] = useState([]);
-
   const [animal, AnimalDropdown] = UseDropDown('Animal', 'dog', ANIMALS);
   const [breed, BreedDropdown, setBreed] = UseDropDown('breed', '', breeds);
   const [pets, setPets] = useState([]);
@@ -37,10 +36,10 @@ const SearchParams = () => {
       <form
         onSubmit={e => {
           e.preventDefault();
-
           requestPets();
         }}
       >
+        <h2>hello</h2>
         <label htmlFor="location">
           Loaction
           <input
@@ -51,6 +50,7 @@ const SearchParams = () => {
             onChange={e => setlocation(e.target.value)}
           />
         </label>
+
         <AnimalDropdown />
         <BreedDropdown />
 
