@@ -2,6 +2,7 @@ import React from 'react';
 import Pet from './Pet';
 
 const Results = ({ pets }) => {
+  // console.log(pets[0].age);
   return (
     <div className="search">
       {pets.length === 0 ? (
@@ -17,6 +18,7 @@ const Results = ({ pets }) => {
             location={`${pet.contact.address.city}, ${pet.contact.address.state}`}
             id={pet.id}
           />;
+        
         })
       )}
     </div>

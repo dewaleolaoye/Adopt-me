@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+
 import pet, { ANIMALS } from '@frontendmasters/pet';
 import UseDropDown from './UseDropdown';
 import Results from './Results';
@@ -39,7 +40,6 @@ const SearchParams = () => {
           requestPets();
         }}
       >
-        <h2>hello</h2>
         <label htmlFor="location">
           Loaction
           <input
@@ -56,6 +56,7 @@ const SearchParams = () => {
 
         <button>Submit</button>
       </form>
+
       <Results pets={pets} />
     </div>
   );
