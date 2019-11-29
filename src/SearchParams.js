@@ -57,6 +57,18 @@ const SearchParams = () => {
         <button>Submit</button>
       </form>
 
+      {/* {pets.map(p => {
+        let media = p.photos[0].small;
+        return (
+          <div key={p.id}>
+            {console.log('photos', p.photos[0].medium)}
+            <img src={media} alt={name} />
+            <h2>{p.name}</h2>
+          </div>
+        );
+      })} */}
+      {/* {console.log(pets[0].photos[0].small)} */}
+
       <Results pets={pets} />
     </div>
   );
