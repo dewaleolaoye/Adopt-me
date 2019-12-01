@@ -49,3 +49,7 @@ export default function DetailsErrorBoundary(props) {
     </ErrorBoundary>
   );
 }
+
+// Hello ooo, all I need right now is to get myself Rice, Plantain, and Chicken if possible Moi Moi too
+// like I deserve it right?
+// Yeeea Yoou doooooooooooooooooooooooooooooooooo!

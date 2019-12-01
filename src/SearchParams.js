@@ -1,8 +1,9 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useContext } from 'react';
 
 import pet, { ANIMALS } from '@frontendmasters/pet';
 import UseDropDown from './UseDropdown';
 import Results from './Results';
+import ThemeContext from './ThemeContext';
 
 const SearchParams = () => {
   const [location, setlocation] = useState('Seattle, WA');
@@ -10,6 +11,7 @@ const SearchParams = () => {
   const [animal, AnimalDropdown] = UseDropDown('Animal', 'dog', ANIMALS);
   const [breed, BreedDropdown, setBreed] = UseDropDown('breed', '', breeds);
   const [pets, setPets] = useState([]);
+  const [theme] = useContext(ThemeContext);
 
   async function requestPets() {
     const { animals } = await pet.animals({
@@ -54,20 +56,8 @@ const SearchParams = () => {
         <AnimalDropdown />
         <BreedDropdown />
 
-        <button>Submit</button>
+        <button style={{ backgroundColor: theme }}>Submit</button>
       </form>
-
-      {/* {pets.map(p => {
-        let media = p.photos[0].small;
-        return (
-          <div key={p.id}>
-            {console.log('photos', p.photos[0].medium)}
-            <img src={media} alt={name} />
-            <h2>{p.name}</h2>
-          </div>
-        );
-      })} */}
-      {/* {console.log(pets[0].photos[0].small)} */}
 
       <Results pets={pets} />
     </div>
